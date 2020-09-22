@@ -6,9 +6,9 @@ cmake ../../../source \
   -DCMAKE_ANDROID_STL_TYPE=gnustl_static \
   -DNEON_ANDROID=1
 
-sed -i '' 's/-lpthread/-pthread/' CMakeFiles/cli.dir/link.txt
-sed -i '' 's/-lpthread/-pthread/' CMakeFiles/x265-shared.dir/link.txt
-sed -i '' 's/-lpthread/-pthread/' CMakeFiles/x265-static.dir/link.txt
+sed -i 's/-lpthread/-pthread/' CMakeFiles/cli.dir/link.txt
+sed -i 's/-lpthread/-pthread/' CMakeFiles/x265-shared.dir/link.txt
+sed -i 's/-lpthread/-pthread/' CMakeFiles/x265-static.dir/link.txt
 
 make -j${NUMBER_OF_CORES}
 make DESTDIR=${OUTPUT_PREFIX}/armeabi-v7a install
